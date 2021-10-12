@@ -7,6 +7,7 @@
     padding: 1px 1px;
 }
 .navbarMenu {
+    height: 50px;
     display: flex;
     justify-content: space-around;
     overflow: hidden;
@@ -36,16 +37,19 @@ ul{
     list-style-type: none;
     align-items: center;
 }
-   ul ul {
+.menuDesplegable {
        position: absolute;
        display: none;
    }
-   ul ul li {
+.section {
        width: 100%;
        background-color: black;
        border: 1px solid gray;
+       position:relative;
+       right:40px;
+       
    }
-   ul li:hover ul{
+.navbarInteractivo:hover .menuDesplegable{
        display: block;
    }
    

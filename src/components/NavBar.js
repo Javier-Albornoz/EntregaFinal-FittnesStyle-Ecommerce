@@ -7,10 +7,10 @@ export const NavBar = () => {
                 <li className ='navbarItem'>
                     <a href ='/#'>Inicio</a>
                 </li>
-                <li className ='navbarItem'><a href ='/#'>Tienda</a>
-                <ul>
+                <li className ='navbarInteractivo'><a href ='/#'>Tienda</a>
+                <ul className = 'menuDesplegable'>
                     <li className ='section'>
-                        <a>Mujer</a>
+                        <a href ='#'>Mujer</a>
                     </li>
                     <li className='section'>
                         <a href ='/#'>Hombre</a>
