@@ -7,7 +7,7 @@
     padding: 1px 1px;
 }
 .navbarMenu {
-    height: 50px;
+    height: 60px;
     display: flex;
     justify-content: space-around;
     overflow: hidden;
@@ -52,4 +52,8 @@ ul{
 .navbarInteractivo:hover .menuDesplegable{
        display: block;
    }
-   
+.icon{
+    :hover{ 
+    transform: scale(0.8);
+    transition:all 1.5s;}
+}

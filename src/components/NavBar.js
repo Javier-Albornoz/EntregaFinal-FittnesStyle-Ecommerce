@@ -1,3 +1,4 @@
+import {CartWidgets} from './CartWidgets'
 import './navBar.scss'
 export const NavBar = () => {
     return (
@@ -25,6 +26,9 @@ export const NavBar = () => {
                 </li>
                 <li className ='navbarItem'>
                     <a href='/#'>Promociones</a>
+                </li>
+                <li className='icon'>
+                    <CartWidgets />
                 </li>
             </ul>
         </div>

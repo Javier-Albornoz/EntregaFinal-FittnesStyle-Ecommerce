@@ -1,12 +1,14 @@
 
 import './App.css';
-import {NavBar} from './components/NavBar';
+import { ItemListContainer } from './components/ItemListContainer';
+import { NavBar } from './components/NavBar';
+
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <h1>Bienvenid@s a FittnesStyle 🏋️‍♂️💪🏋️‍♀️</h1>
+      <ItemListContainer greeting='Bienvenid@s a FittnesStyle'/>
     </div>
   );
 }
