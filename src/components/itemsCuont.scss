@@ -1,0 +1,27 @@
+.counterContainer{
+    max-width: 300px;
+    margin: auto;
+}
+.counter{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    .display{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 7px 0px;
+        .btn{
+            background-color: black;
+            color: blanchedalmond;
+            border: 2px solid rgba(255, 0, 0, 0.705);
+            font-size: 20px;
+            &:hover:focus{
+                outline: none;
+                transform: scale(1.2);
+                transition: all 1s;
+            }
+            }
+    }
+
+}
