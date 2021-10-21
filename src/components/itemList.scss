@@ -1,0 +1,22 @@
+.cardsList{
+    padding: 7px;
+ 
+    .cards{
+        display: flex;
+        justify-content: space-around;
+        .card{
+            border: 3px solid black;
+            border-radius: 10px;
+            .img{
+                width: 300px; 
+            }
+            &:hover{
+                background-color: rgba(248, 70, 0, 0.678);
+                border-color: rgba(248, 70, 0, 0.678);
+                transition: all 1s;
+                cursor: pointer;
+
+            }
+        }
+    }
+}
