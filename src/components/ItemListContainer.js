@@ -20,7 +20,7 @@ export const ItemListContainer = () => {
     const mostrarProductos = new Promise ((result,reject)=>{
         setTimeout(function(){
             result(productosMock);
-        }, 3000);
+        }, 2000);
     });
     useEffect(()=>{
         mostrarProductos

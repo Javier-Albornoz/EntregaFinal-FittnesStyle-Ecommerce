@@ -1,13 +1,13 @@
 import { useState } from "react";
 import './itemsCuont.scss'
 
-export function ItemsCuont({disponible, inicial, onAdd}){
+export function ItemsCuont({stock, inicial, onAdd}){
     const [counter, setCounter] = useState(inicial);
     const incrementar = () => {
-        if(counter<disponible){
+        if(counter<stock){
             setCounter(counter+1);
         }
-    }
+    };
     const decrementar = () => {
         if(counter>inicial){
             setCounter(counter-1);
