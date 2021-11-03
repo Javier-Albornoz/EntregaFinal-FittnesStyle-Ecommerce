@@ -11,7 +11,7 @@ export const ItemDetail = ({producto, setViewModal})=>{
             <h2>{producto.nombre}</h2>
             <h3>{producto.descripcion}</h3>
             <h4>${producto.precio} </h4>
-            <ItemsCuont stock={producto.stock} icnicial={1} onAdd={onAdd} />
+            <ItemsCuont stock={producto.stock} inicial={1} onAdd={onAdd} />
         </div>
     );
 };
