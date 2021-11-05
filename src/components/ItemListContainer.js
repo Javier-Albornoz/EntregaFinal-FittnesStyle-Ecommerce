@@ -18,6 +18,7 @@ export const ItemListContainer = () => {
         mostrarProductos
         .then((result) =>setProductos(result))
         .catch((err)=>alert(err))
+        .finally(()=>setCargando(false));
     }, []);
     return <>{cargando ? <h2>Cargando...</h2> : <ItemList productos={productos}/>}</>
 };

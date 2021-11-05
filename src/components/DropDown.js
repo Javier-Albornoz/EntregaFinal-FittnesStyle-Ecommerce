@@ -23,7 +23,7 @@ export const DropDown = ()=>{
             {desplegado ? (
                 <ul className='menuDesplegable'>
                     {tienda.map((tienda)=>(
-                        <NavLink key={tienda} to={`/tienda/${tienda.id}`}>{tienda.nombre}</NavLink>
+                        <NavLink key={tienda.id} to={`/tienda/${tienda.id}`}>{tienda.nombre}</NavLink>
                     ))}
                 </ul>
             ) : null}
