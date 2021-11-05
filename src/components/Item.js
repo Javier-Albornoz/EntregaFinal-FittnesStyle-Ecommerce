@@ -1,19 +1,15 @@
-import { useState } from 'react';
-import { ItemDetailContainer } from './ItemDetailContainer';
+import { NavLink } from 'react-router-dom';
 import './itemList.scss'
+
 export const Item = ({producto}) => {
-    const [viewModal, setViewModal] = useState(false);
     return(
         <>
-        <div className='card' onClick={()=> setViewModal(true)}>
+        <NavLink className='card' to={`/productos/${producto.id}`} >
             <img src = {producto.img} alt ='producto' className='img'/>
             <h2>{producto.nombre}</h2>
             <h3>{producto.descripcion}</h3>
             <h4>${producto.precio}</h4>
-        </div>
-        {viewModal ? (
-            <ItemDetailContainer setViewModal={setViewModal}/>
-        ) : null}
+        </NavLink>
         </>
     );
 };

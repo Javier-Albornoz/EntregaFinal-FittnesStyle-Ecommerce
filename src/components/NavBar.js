@@ -1,31 +1,23 @@
+import { NavLink } from 'react-router-dom';
 import {CartWidgets} from './CartWidgets'
+import { DropDown } from './DropDown';
 import './navBar.scss'
 export const NavBar = () => {
     return (
         <div className ='navbarContainer'>
+            <NavLink to='/'><h2 className = 'navbarBrand'>FittnesStyle</h2></NavLink>
             <ul className ='navbarMenu'>
-                    <h2 className = 'navbarBrand'>FittnesStyle</h2>
                 <li className ='navbarItem'>
-                    <a href ='/#'>Inicio</a>
+                    <NavLink to ='/'>Inicio</NavLink>
                 </li>
-                <li className ='navbarInteractivo'><a href ='/#'>Tienda</a>
-                <ul className = 'menuDesplegable'>
-                    <li className ='section'>
-                        <a href ='#'>Mujer</a>
-                    </li>
-                    <li className='section'>
-                        <a href ='/#'>Hombre</a>
-                    </li>
-                    <li className='section'>
-                        <a href='/#'>Teens&Kids</a>
-                    </li>
-                </ul>
+                <li className ='navbarItem dropdown'>
+                    <DropDown />
                 </li>
                 <li className = 'navbarItem'>
-                    <a href ='/#'>contacto</a>
+                    <NavLink to ='/Contacto'>contacto</NavLink>
                 </li>
                 <li className ='navbarItem'>
-                    <a href='/#'>Promociones</a>
+                    <NavLink to='/Promociones'>Promociones</NavLink>
                 </li>
                 <li className='icon'>
                     <CartWidgets />

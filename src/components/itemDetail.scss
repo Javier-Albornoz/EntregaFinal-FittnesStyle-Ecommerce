@@ -8,16 +8,26 @@
     z-index: 100;
     box-shadow: 0 3px 6px rgb(0 0 0 / 17%),0 3px 6px reb(0 0 0 /27%);
     .cardProducto{
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         .IMG{
             width: 400px;
         }
+        .btn2{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            background-color: black;
+            &:hover{
+                background-color: white;
+            }
+        }
         .cerrarModal{
-            position: absolute;
-            top: 0;
-            right: 0;
-            cursor: pointer;
+            margin-top: 10px;
         }
     }
-
 }

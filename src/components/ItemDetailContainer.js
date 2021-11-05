@@ -1,36 +1,35 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail";
 import './itemDetail.scss';
-export const ItemDetailContainer = ({setViewModal}) => {
-    const productoMock = {
-        id: 1,
-        nombre: 'Creatina',
-        descripcion: 'La creatina está involucrada en la generación de la energía que necesitan los músculos para su funcionamiento.',
-        img: 'https://n7.nextpng.com/sticker-png/794/248/sticker-png-dietary-supplement-creatine-sports-nutrition-bodybuilding-supplement-sports-nutrition-food-nutrition-dietary-supplement-dose.png',
-        stock: 3,
-        precio: 2500,
-    };
+import { productosMock } from "./productosMock";
+
+export const ItemDetailContainer = () => {
+    const {id} = useParams();
     const [producto, setProducto] = useState({});
     const [cargando, setCargando] = useState(false);
+
     const mostrarProductos = new Promise((res, rej)=>{
         setTimeout(function(){
-            res(productoMock);
+            res(productosMock);
         },2000);
     });
     useEffect(()=>{
         setCargando(true);
         mostrarProductos
-        .then((res)=>setProducto(res))
+        .then((res)=>{
+            res.forEach((item) => {
+                if(item.id === id){
+                setProducto(item)}
+            });
+        })
         .catch((err)=>alert(err))
-        .finally(()=>setCargando());
+        .finally(()=>setCargando(false));
     },[]);
+    
     return (
         <div className='detalleProducto'>
-            {cargando ? (
-                <h2>Cargando...</h2>
-            ) : (
-                <ItemDetail producto={producto} setViewModal={setViewModal}/>
-            )}
+            {cargando ? <h2>Cargando...</h2> : <ItemDetail producto={producto} />}
         </div>
     );
 };

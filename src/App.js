@@ -1,15 +1,32 @@
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import { Carrito } from './components/Carrito';
+import { Contacto } from './components/Contacto';
+import { ItemDetailContainer } from './components/ItemDetailContainer';
 import { ItemListContainer } from './components/ItemListContainer';
 import { NavBar } from './components/NavBar';
+import { Promociones } from './components/Promociones';
 
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <NavBar />
-      <ItemListContainer greeting='Bienvenid@s a FittnesStyle'/>
+       <NavBar />
+     <Routes>
+       <Route path="/Contacto"element={<Contacto />}></Route>
+
+       <Route  path="/Promociones" element={<Promociones />}></Route>
+
+       <Route  path="/Carrito" element={<Carrito />}></Route>
+
+       <Route  path="/category/:id"element={<ItemDetailContainer />}></Route>
+
+       <Route  path="/item/:id" element={<ItemListContainer />}></Route>
+       <Route path="/" element={<ItemListContainer />}></Route>
+     </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 

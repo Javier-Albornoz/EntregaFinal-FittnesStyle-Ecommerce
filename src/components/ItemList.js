@@ -6,7 +6,7 @@ export const ItemList = ({productos}) =>{
             <div className ='cards'>
                 {
                     productos.map((producto)=>(
-                        <Item producto = {producto}/>
+                        <Item key={producto} producto = {producto}/>
                     ))
                 }
             </div>
