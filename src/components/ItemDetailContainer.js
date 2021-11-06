@@ -5,7 +5,7 @@ import './itemDetail.scss';
 import { productosMock } from "./productosMock";
 
 export const ItemDetailContainer = () => {
-    const {id} = useParams();
+    const { id } = useParams();
     const [producto, setProducto] = useState({});
     const [cargando, setCargando] = useState(false);
 
@@ -26,6 +26,7 @@ export const ItemDetailContainer = () => {
         .catch((err)=>alert(err))
         .finally(()=>setCargando(false));
     },[]);
+
     
     return (
         <div className='detalleProducto'>

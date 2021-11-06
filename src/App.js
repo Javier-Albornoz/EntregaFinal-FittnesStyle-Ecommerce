@@ -20,10 +20,10 @@ function App() {
 
        <Route  path="/Carrito" element={<Carrito />}></Route>
 
-       <Route  path="/category/:id"element={<ItemDetailContainer />}></Route>
+       <Route  path="/category/:id"element={<ItemListContainer />}></Route>
 
-       <Route  path="/item/:id" element={<ItemListContainer />}></Route>
-       <Route path="/" element={<ItemListContainer />}></Route>
+       <Route  path="/item/:id" element={<ItemDetailContainer />}></Route>
+       <Route exact path="/" element={<ItemListContainer />}></Route>
      </Routes>
     </div>
     </BrowserRouter>
