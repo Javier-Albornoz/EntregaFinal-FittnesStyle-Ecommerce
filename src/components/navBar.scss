@@ -4,11 +4,17 @@
     align-items: center;
     background-color: black;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 10px;
+
+    button{
+        font-weight: bold;
+        font-family: inherit;
+        font-size: inherit;
+    }
     .navbarMenu {
         height: 50px;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         list-style-type: none;
         .navbarItem{
@@ -51,6 +57,21 @@
             }
         }
     }
+}
+.drop{
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 0, 0, 0.623);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline;
+    padding: 17px 17px;
+    &:hover{
+        background-color: white;
+    }
+
+
 }
 .navbarBrand {
     color: white;
