@@ -18,9 +18,9 @@ export const ItemDetailContainer = () => {
         setCargando(true);
         mostrarProductos
         .then((res)=>{
-            res.forEach((item) => {
-                if(item.id === id){
-                setProducto(item)}
+            res.forEach((producto) => {
+                if(producto.id === id){
+                setProducto(producto)}
             });
         })
         .catch((err)=>alert(err))
