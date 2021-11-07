@@ -1,46 +1,78 @@
-.navbarContainer {
+.navbarContainer{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     background-color: black;
     color: white;
-    padding: 1px 1px;
-}
-.navbarMenu {
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style-type: none;
+    padding: 10px 15px;
+    .navbarMenu {
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+        .navbarItem{
+            a {
+                color: rgba(255, 0, 0, 0.623);
+                padding: 17px 27px;
+                text-align: center;
+                display: block;
+                text-decoration: none;
+                font-weight: bold;
+                text-transform: uppercase;
+                &:hover{
+                    background-color: white;
+                    transition: 0.2s;
+                }
+            }
+            .navbarInteractivo{
+                position: relative;
+                a{
+                    display: block;
+                    color: rgba(255, 0, 0, 0.623);
+                    text-align: center;
+                    padding: 14px 0px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: white;
+                    }
+                }
+                .menuDesplegable{
+                    position: absolute;
+                    background-color: black;
+                    color: rgba(255, 0, 0, 0.623);
+                    padding: 1px;
+                    list-style-type: none;
+                    width: 88px;
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 
+                    0 3px 6px rgba(0, 0, 0, 0.23);
+                }
+            }
+        }
+    }
 }
 .navbarBrand {
     color: white;
     padding: 7px 7px;
 }
-a {
-    color: rgba(255, 0, 0, 0.623);
-    padding: 7px 7px;
-    text-align: center;
-    display: block;
+a{
     text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    &:hover{
-        background-color: white;
-        transition: 0.2s;
-    }
 }
-.navbarItem{
-    padding: 10px 15px;
-}
+
+
+
 ul{
     list-style-type: none;
     align-items: center;
 }
-.menuDesplegable {
-       position: absolute;
-       display: none;
-   }
+// .navbarInteractivo:hover .menuDesplegable{
+//        display: block;
+//    }
+// .menuDesplegable {
+//        position: absolute;
+//        display: none;
+//    }
 .section {
        width: 100%;
        background-color: black;
@@ -48,9 +80,6 @@ ul{
        position:relative;
        right:40px;
        
-   }
-.navbarInteractivo:hover .menuDesplegable{
-       display: block;
    }
 .icon{
     :hover{ 

@@ -19,7 +19,7 @@ export const DropDown = ()=>{
     ];
     return (
         <div className='navbarInteractivo'>
-            <button onClick={()=>setDesplegado(!desplegado)}>Tienda</button>
+            <button className='drop' onClick={()=>setDesplegado(!desplegado)}>Tienda</button>
             {desplegado ? (
                 <ul className='menuDesplegable'>
                     {tienda.map((tienda)=>(
