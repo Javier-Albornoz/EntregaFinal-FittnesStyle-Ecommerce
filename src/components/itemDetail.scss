@@ -1,5 +1,5 @@
 .detalleProducto{
-    background: white;
+    background: rgb(228, 127, 114);
     padding: 10px;
     position: fixed;
     width: 400px;
@@ -7,6 +7,7 @@
     bottom: 40px;
     z-index: 100;
     box-shadow: 0 3px 6px rgb(0 0 0 / 17%),0 3px 6px reb(0 0 0 /27%);
+
     .cardProducto{
         display: flex;
         flex-direction: column;
@@ -24,6 +25,13 @@
             background-color: black;
             &:hover{
                 background-color: white;
+                color: rgba(255, 0, 0, 0.705);
+                transform: scale(1.3);
+                transition: all 0.5s;
+                text-transform: uppercase;
+                font-weight: bold;
+                border-color: rgba(255, 0, 0, 0.705);
+                
             }
         }
         .cerrarModal{

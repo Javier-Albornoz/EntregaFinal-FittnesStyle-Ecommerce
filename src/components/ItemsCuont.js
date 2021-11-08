@@ -24,7 +24,7 @@ export function ItemsCuont({stock, inicial, onAdd}){
                     </div>
                     <button className = 'btn' onClick={incrementar}>{' '} + {' '}</button>
                 </div>
-                <NavLink className = 'btn2' onClick={()=>onAdd(counter) }>Sumar al carrito</NavLink>
+                <button className = 'btn2' onClick={()=>onAdd(counter) }>Sumar al carrito</button>
             </div>
         </div>
     )
