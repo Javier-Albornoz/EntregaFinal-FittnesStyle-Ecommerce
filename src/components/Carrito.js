@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
-import trashIcon from '../images/trashIcon.png';
+import trashIcon from '../images/trashIcon.ico';
 
 
 export const Carrito= ()=>{

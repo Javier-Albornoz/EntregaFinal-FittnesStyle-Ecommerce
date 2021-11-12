@@ -3,27 +3,27 @@ import { NavLink } from "react-router-dom";
 
 export const DropDown = ()=>{
     const[desplegado, setDesplegado] = useState(false);
-    const tienda = [
+    const categorias = [
         {
-            id:'mujeres',
-            nombre:'Mujeres'
+            id:'proteinas',
+            nombre:'Proteinas'
         },
         {
-            id:'hombres',
-            nombre: 'Hombres'
+            id:'sup.generales',
+            nombre: 'Sup. Generales'
         },
-        {
-            id:'teen&kids',
-            nombre:'Teen&Kids'
-        },
+        // {
+        //     id:'teen&kids',
+        //     nombre:'Teen&Kids'
+        // },
     ];
     return (
         <div className='navbarInteractivo'>
             <button type='button' className='drop' onClick={()=>setDesplegado(!desplegado)}>Tienda</button>
             {desplegado ? (
                 <ul className='menuDesplegable'>
-                    {tienda.map((tienda)=>(
-                        <NavLink key={tienda.id} to={`/category/${tienda.id}`}>{tienda.nombre}</NavLink>
+                    {categorias.map((categoria)=>(
+                        <NavLink key={categoria.id} to={`/categoria/${categoria.id}`}>{categoria.nombre}</NavLink>
                     ))}
                 </ul>
             ) : null}

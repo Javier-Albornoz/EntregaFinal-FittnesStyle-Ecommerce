@@ -6,7 +6,7 @@ import { productosMock } from "./productosMock";
 
 export const ItemListCategory = () => {
     const [productos, setProductos] = useState([]);
-    const[cargando, setCargando] = useState(false);
+    const [cargando, setCargando] = useState(false);
     const {categoria} = useParams();
 
     const tomarProductos = new Promise((res, rej) => {

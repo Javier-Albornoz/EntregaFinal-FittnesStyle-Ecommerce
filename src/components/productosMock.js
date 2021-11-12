@@ -6,7 +6,7 @@ export const productosMock = [
         stock: 7,
         precio: 2500,
         descripcion:'La creatina está involucrada en la generación de la energía que necesitan los músculos para su funcionamiento. ',
-        categoria: 'Sup. Generales' 
+        categoria: 'sup.generales' 
 
     },
     {
@@ -16,7 +16,7 @@ export const productosMock = [
         stock: 2,
         precio: 4000,
         descripcion:'Una proteína en polvo es el resultado de intentar separar la proteína de cualquier fuente alimentaria.',
-        categoria: 'Proteinas'
+        categoria: 'proteinas'
     },
     {
         id: "3",
@@ -25,6 +25,6 @@ export const productosMock = [
         stock: 5,
         precio: 3200,
         descripcion:'Los aminoácidos son compuestos orgánicos que se combinan para formar proteínas, las cuales son indispensables para nuestro organismo.',
-        categoria: 'Sup. Generales'
+        categoria: 'sup.generales'
     },
 ];
