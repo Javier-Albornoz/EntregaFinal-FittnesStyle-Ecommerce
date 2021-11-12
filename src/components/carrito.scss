@@ -1,0 +1,26 @@
+.cartItem{
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    
+    .trashIcon {
+        height: 30px;
+        margin: 20px 0;
+        cursor: pointer;
+    
+      }
+      h2{
+          color: rgb(206, 13, 13);
+      }
+      .cantidad{
+        color: white;
+        // position: absolute;
+        top: -10px;
+        right: 10px;
+        font-size: 12px;
+        z-index: 5;
+    }
+}

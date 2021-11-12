@@ -27,9 +27,11 @@ export function CartProvider({children}){
     };
     const removerProducto = (itemInCart)=>{
         const indexExistente = carrito.findIndex((item)=> item.id === itemInCart.id);
+        const carritoStorage = Array.from(carrito);
 
         if(indexExistente >= 0){
-            carrito.splice(indexExistente, 1);
+            carritoStorage.splice(indexExistente, 1);
+            setCarrito(carritoStorage);
         }
     };
     return (
