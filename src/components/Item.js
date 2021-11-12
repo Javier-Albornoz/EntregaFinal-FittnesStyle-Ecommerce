@@ -5,9 +5,13 @@ export const Item = ({producto}) => {
     return(
         <>
         <NavLink className='card' to={`/producto/${producto.id}`} >
-            <img src = {producto.img} alt ='producto' className='img'/>
+            <div className='cardFoto' >
+            <img src = {producto.img} alt ='producto' className='img' />
+            </div>
+            <div className='cardDescripcion'>
             <h2>{producto.nombre}</h2>
             <h3>${producto.precio}</h3>
+            </div>
         </NavLink>
         </>
     );
