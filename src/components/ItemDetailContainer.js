@@ -1,26 +1,24 @@
+import { collection, getDocs, getFirestore, query } from "@firebase/firestore";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail";
 import './itemDetail.scss';
-import { productosMock } from "./productosMock";
 
 export const ItemDetailContainer = () => {
     const { id } = useParams();
     const [producto, setProducto] = useState({});
     const [cargando, setCargando] = useState(false);
 
-    const mostrarProductos = new Promise((res, rej)=>{
-        setTimeout(function(){
-            res(productosMock);
-        },2000);
-    });
     useEffect(()=>{
         setCargando(true);
-        mostrarProductos
-        .then((res)=>{
-            res.forEach((producto) => {
-                if(producto.id === id){
-                setProducto(producto)}
+        const db = getFirestore();
+        const q = query(collection(db, 'items'));
+        getDocs(q)
+        .then((querySnapshot) =>{
+            querySnapshot.docs.forEach((doc)=> {
+                if(doc.id === id){
+                    setProducto({...doc.data(), id: doc.id});
+                }
             });
         })
         .catch((err)=>alert(err))

@@ -1,7 +1,7 @@
+import { collection, getDocs, getFirestore, query } from "@firebase/firestore";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router";
 import { ItemList } from "./ItemList";
-import { productosMock } from "./productosMock";
 
 
 export const ItemListCategory = () => {
@@ -9,17 +9,17 @@ export const ItemListCategory = () => {
     const [cargando, setCargando] = useState(false);
     const {categoria} = useParams();
 
-    const tomarProductos = new Promise((res, rej) => {
-        setTimeout(function(){
-            res(productosMock);
-        },2000)
-    });
-
         useEffect(()=>{
             setCargando(true);
-            tomarProductos
-            .then((res)=>{
-                setProductos(res.filter((item)=> item.categoria === categoria));
+            const db = getFirestore();
+            const q = query(collection(db, 'items'));
+            getDocs(q)
+            .then((querySnapshot)=>{
+                querySnapshot.docs.forEach((doc)=>{
+                    console.log(doc);
+                    if(doc.categoria === categoria){
+                        setProductos({...doc.data(), categoria: doc.categoria});
+                }});
             })
             .catch((err)=>alert(err))
             .finally(()=> setCargando(false));
