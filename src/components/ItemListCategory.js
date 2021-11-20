@@ -1,4 +1,4 @@
-import { collection, getDocs, getFirestore, query } from "@firebase/firestore";
+import { collection, getDocs, getFirestore, query, where} from "@firebase/firestore";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router";
 import { ItemList } from "./ItemList";
@@ -12,17 +12,15 @@ export const ItemListCategory = () => {
         useEffect(()=>{
             setCargando(true);
             const db = getFirestore();
-            const q = query(collection(db, 'items'));
+            const q = query(collection(db, 'items'), where('categoria', '==', categoria));
             getDocs(q)
             .then((querySnapshot)=>{
-                querySnapshot.docs.forEach((doc)=>{
-                    console.log(doc.categoria);
-                    if(doc.categoria === categoria){
-                        setProductos({...doc.data(), categoria: doc.categoria});
-                }});
+                     setProductos(querySnapshot.docs.map((doc)=> doc.data()));
             })
             .catch((err)=>alert(err))
             .finally(()=> setCargando(false));
         }, [categoria]);
         return <>{cargando ? <h2>Cargando...</h2> : <ItemList productos={productos}/>}</>;
     };
+
+   
