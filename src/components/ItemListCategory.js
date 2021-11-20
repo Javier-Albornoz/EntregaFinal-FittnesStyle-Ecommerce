@@ -16,7 +16,7 @@ export const ItemListCategory = () => {
             getDocs(q)
             .then((querySnapshot)=>{
                 querySnapshot.docs.forEach((doc)=>{
-                    console.log(doc);
+                    console.log(doc.categoria);
                     if(doc.categoria === categoria){
                         setProductos({...doc.data(), categoria: doc.categoria});
                 }});

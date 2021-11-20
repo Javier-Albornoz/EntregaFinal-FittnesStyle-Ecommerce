@@ -5,7 +5,7 @@ export const ItemList = ({productos}) =>{
         <div className = 'cardsList'>
             <div className ='cards'>
                 {productos.map((producto)=>(
-                 <Item producto = {producto}/>
+                 <Item   producto = {producto}/>
                     ))
                 }
             </div>
