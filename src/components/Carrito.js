@@ -74,7 +74,7 @@ export const Carrito= ()=>{
                 <h1>Aun no tenes productos en el carrito😃</h1>
             )}
             <div className='formulario'>
-                <UserForm usuario = {usuario} setUsuario = {setUsuario}/>
+                <UserForm user = {usuario} setUser = {setUsuario}/>
                 {orden.id ? <div>Tu nº de orden es: {orden.id}</div> : <h2>Cargando...</h2> }
 
             </div>
