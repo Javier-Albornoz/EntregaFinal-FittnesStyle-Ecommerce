@@ -1,4 +1,5 @@
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
+import './detalleOrden.scss'
 
 
 export const UserForm = ({ user, setUser }) => {
@@ -11,7 +12,7 @@ export const UserForm = ({ user, setUser }) => {
     const handleMail2 = (e) => setMail2(e.target.value);
   
     const verificarEmail = (mail1, mail2, nombre) => {
-      if (mail1 === mail2) {
+     if (mail1 === mail2) {
         setUser({
           name: nombre,
           mail: mail1,
@@ -22,9 +23,9 @@ export const UserForm = ({ user, setUser }) => {
     };
     return (
         <div className="orderContainer">
-          {user.name ? <h3>Bienvenido</h3> : <h3>Logueate para comprar</h3>}
-          {user.name ? (
-            <div className="userName">{user.name}</div>
+          {handleNombre === '' ? <h3>Bienvenido</h3> : <h3>Logueate para comprar</h3>}
+          {handleNombre === '' ? (
+            <div className="userName">{handleNombre}</div>
           ) : (
             <div className="userForm">
               <input
