@@ -29,7 +29,7 @@ export const Carrito= ()=>{
             items: carrito,
             // date: firebase.firestore.Timestamp.fromDate(new Date()),
             total: precioTotal,
-        }
+        };
         ordenes
         .add(newOrden)
         .then(({id})=>{
@@ -66,7 +66,9 @@ export const Carrito= ()=>{
                       <h2>TOTAL</h2>
                       <span><h4>${precioTotal}</h4></span>
                   </div>
-                  <button className='btn2' disabled={!(usuario.nombre && usuario.email && carrito.length)} onClick={()=>crearOrden()}>
+                  <button className='btn2' 
+                  disabled={!(usuario.name && usuario.email && carrito.length)} 
+                  onClick={()=>crearOrden()}>
                       <h4>Terminar mi compra😁</h4>
                   </button>
                   </>
