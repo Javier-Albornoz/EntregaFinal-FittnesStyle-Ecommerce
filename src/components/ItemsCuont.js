@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import './itemsCuont.scss'
 
 export function ItemsCuont({stock, inicial, onAdd}){
@@ -20,7 +19,7 @@ export function ItemsCuont({stock, inicial, onAdd}){
                 <div className = 'display'>
                     <button className = 'btn' onClick={decrementar}>{' '} - {' '}</button>
                     <div>
-                        <h2>Unidades:{counter}</h2>
+                        <h3>Unidades:{counter}</h3>
                     </div>
                     <button className = 'btn' onClick={incrementar}>{' '} + {' '}</button>
                 </div>

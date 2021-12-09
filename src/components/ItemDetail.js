@@ -25,8 +25,8 @@ export const ItemDetail = ({producto})=>{
         <div className = 'cardProducto'>
             <img src={producto.img} alt='productoimg'className='IMG'/>
             <h2>{producto.nombre}</h2>
-            <h3>{producto.descripcion}</h3>
-            <h4>${producto.precio} </h4>
+            <h4>{producto.descripcion}</h4>
+            <h3>${producto.precio} </h3>
             <ItemsCuont stock={producto.stock} inicial={1} onAdd={onAdd} />
             {botonSumar ? ( 
                 <NavLink to='/Carrito' className='btn2' onClick={()=>{comprarProductos()}}>

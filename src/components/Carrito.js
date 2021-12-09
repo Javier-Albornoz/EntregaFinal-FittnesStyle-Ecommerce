@@ -3,7 +3,6 @@ import { CartContext } from "./CartContext";
 import trashIcon from '../images/trashIcon.ico';
 import './carrito.scss';
 import { getFirestore } from "../firebase/index";
-import * as firebase from 'firebase/app';
 import "firebase/firestore";
 import { UserForm } from "./UserForm";
 
@@ -27,7 +26,6 @@ export const Carrito= ()=>{
         const newOrden ={
             compredor: usuario,
             items: carrito,
-            // date: firebase.firestore.Timestamp.fromDate(new Date()),
             total: precioTotal,
         };
         ordenes
@@ -48,7 +46,6 @@ export const Carrito= ()=>{
                 <>
                 {carrito.map((producto)=>(
                     <div key={producto.id} className='cartItem'>
-                        <img src={producto.img} alt='productoimg'className='IMG'/>
                         <h2>{producto.nombre}</h2>
                         <h3>Cantidad:{producto.cantidad}</h3>
                         <h3>${calcularPrecio(producto.precio, producto.cantidad)}</h3>

@@ -1,14 +1,18 @@
+body{
+    background-color: rgba(202, 199, 199, 0.712);
+}
 .cardsList{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    // flex-flow: wrap;
     
     .cards{
         display: flex;
         padding: 50px;
         align-items: center;
+        flex-flow: wrap;
         .card{
-            border: 3px solid black;
             border-radius: 10px;
             margin: 10px;
             display: flex;
@@ -16,15 +20,15 @@
             flex-direction: column;
             align-content: center;
             vertical-align: middle;
+            background-color: white;
             .img{
                 height: 200px;
                 padding-top: 7px;
             }
             &:hover{
-                transform: scale(1.1);
-                background-color: rgba(248, 70, 0, 0.678);
-                border-color: rgba(248, 70, 0, 0.678);
-                transition: all 1s;
+                transform: scale(1.05);
+                box-shadow: 5px 5px 10px rgba(224, 9, 9, 0.527);
+	            transition: all 0.3s;
                 cursor: pointer;
             }
             .cardFoto{

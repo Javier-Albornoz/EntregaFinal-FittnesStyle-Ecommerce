@@ -34,7 +34,6 @@ export function CartProvider({children}){
     useEffect(()=>{
         if(carrito.length) {
             const precios = carrito.map((item)=>item.precio * item.cantidad);
-            // console.log(precios.reduce(reductor));
             setPrecioTotal(precios.reduce(reductor));
         }
     }, [carrito]);

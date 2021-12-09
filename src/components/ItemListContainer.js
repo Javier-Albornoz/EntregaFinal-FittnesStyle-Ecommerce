@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-// import { ItemsCuont } from "./ItemsCuont";
-import { productosMock } from "./productosMock";
 import { ItemList } from "./ItemList";
 import './itemList.scss'
 import { getFirestore } from "../firebase/index";
-import { collection, doc, getDocs, query } from "@firebase/firestore";
+import { collection, getDocs, query } from "@firebase/firestore";
 
 
 export const ItemListContainer = () => {
