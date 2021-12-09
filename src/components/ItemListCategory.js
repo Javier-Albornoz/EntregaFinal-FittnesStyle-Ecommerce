@@ -8,6 +8,7 @@ export const ItemListCategory = () => {
     const [productos, setProductos] = useState([]);
     const [cargando, setCargando] = useState(false);
     const {categoria} = useParams();
+    const [getIsEmpty, setGetIsEmpty] = useState(false);
 
         useEffect(()=>{
             setCargando(true);
@@ -15,12 +16,23 @@ export const ItemListCategory = () => {
             const q = query(collection(db, 'items'), where('categoria', '==', categoria));
             getDocs(q)
             .then((querySnapshot)=>{
-                     setProductos(querySnapshot.docs.map((doc)=> doc.data()));
-            })
+                if (querySnapshot.size === 0){
+                    setGetIsEmpty(true);
+                }
+                setProductos(
+                    querySnapshot.docs.map((doc) => {
+                        const newDoc = {  ...doc.data(), id: doc.id };
+                        return newDoc;
+                    })
+                );
+              })
             .catch((err)=>alert(err))
-            .finally(()=> setCargando(false));
+            .finally(()=>setCargando(false));
         }, [categoria]);
-        return <>{cargando ? <h2>Cargando...</h2> : <ItemList productos={productos}/>}</>;
+        return  <>
+        {cargando ? (<h2>Cargando...</h2>) : getIsEmpty ? (
+            <h2>Aun no hay productos 😃</h2>
+        ): (<ItemList productos={productos}/>)}
+        </>
     };
-
    
