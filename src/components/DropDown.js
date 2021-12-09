@@ -12,10 +12,6 @@ export const DropDown = ()=>{
             id:'sup.generales',
             nombre: 'Sup. Generales'
         },
-        // {
-        //     id:'teen&kids',
-        //     nombre:'Teen&Kids'
-        // },
     ];
     return (
         <div className='navbarInteractivo'>
